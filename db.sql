@@ -40,8 +40,34 @@ CREATE TABLE `AUTO` (
 
 LOCK TABLES `AUTO` WRITE;
 /*!40000 ALTER TABLE `AUTO` DISABLE KEYS */;
-INSERT INTO `AUTO` VALUES (1,'TaZik','NissaL',NULL,' Brown','B',100.70);
+INSERT INTO `AUTO` VALUES (1,'TaZik','NissaL','2014-06-12',' Brown','B',100.70);
 /*!40000 ALTER TABLE `AUTO` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `AUTOSALON`
+--
+
+DROP TABLE IF EXISTS `AUTOSALON`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `AUTOSALON` (
+  `ID` int(35) NOT NULL AUTO_INCREMENT,
+  `Adress` char(255) DEFAULT NULL,
+  `Nalog_Number` int(100) DEFAULT NULL,
+  `Name` char(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `AUTOSALON`
+--
+
+LOCK TABLES `AUTOSALON` WRITE;
+/*!40000 ALTER TABLE `AUTOSALON` DISABLE KEYS */;
+INSERT INTO `AUTOSALON` VALUES (1,'st.CockIsland',50,'Mstera Gold Major');
+/*!40000 ALTER TABLE `AUTOSALON` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -60,7 +86,7 @@ CREATE TABLE `CUSTOMERS` (
   `Age` int(100) DEFAULT NULL,
   `Sex` char(15) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +95,7 @@ CREATE TABLE `CUSTOMERS` (
 
 LOCK TABLES `CUSTOMERS` WRITE;
 /*!40000 ALTER TABLE `CUSTOMERS` DISABLE KEYS */;
-INSERT INTO `CUSTOMERS` VALUES (1,'Karmanin Juri Bidrosovich','6364 19056','st. Msterskaya','Mstera',99,'Net');
+INSERT INTO `CUSTOMERS` VALUES (1,'Karmanin Juri Bidrosovich','6364 19056','st. Msterskaya','Mstera',99,'Net'),(2,'Narkomanina Mochezara Anjelovna','4545 20210','st.Strelka','Narko',31,'Woman'),(3,'Kozlov Armen Padlovich','2231 54862','st.Big','Cock',24,'Muzhik');
 /*!40000 ALTER TABLE `CUSTOMERS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +149,7 @@ CREATE TABLE `SALE_AUTO` (
 
 LOCK TABLES `SALE_AUTO` WRITE;
 /*!40000 ALTER TABLE `SALE_AUTO` DISABLE KEYS */;
-INSERT INTO `SALE_AUTO` VALUES (1,NULL,'De Bi Lly','NissaL TaZik','Karmanin Juri Bidrosovich');
+INSERT INTO `SALE_AUTO` VALUES (1,'2021-10-05','De Bi Lly','NissaL TaZik','Karmanin Juri Bidrosovich');
 /*!40000 ALTER TABLE `SALE_AUTO` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,7 +166,7 @@ CREATE TABLE `WORKER` (
   `Stage` int(70) DEFAULT NULL,
   `Money` float(7,2) DEFAULT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -149,7 +175,7 @@ CREATE TABLE `WORKER` (
 
 LOCK TABLES `WORKER` WRITE;
 /*!40000 ALTER TABLE `WORKER` DISABLE KEYS */;
-INSERT INTO `WORKER` VALUES (1,'De Bi Lly',20,100.00);
+INSERT INTO `WORKER` VALUES (1,'De Bi Lly',20,100.00),(2,'Ivanov Akakiy Kakievich',2,400.50);
 /*!40000 ALTER TABLE `WORKER` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -162,4 +188,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-30  6:30:50
+-- Dump completed on 2021-10-08  6:48:52
